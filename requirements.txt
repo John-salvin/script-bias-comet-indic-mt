@@ -1,0 +1,28 @@
+# Core MT Evaluation
+unbabel-comet>=2.0.0
+
+# NLP & Tokenization
+transformers>=4.30.0
+torch>=2.0.0
+indic-nlp-library>=0.91
+sentencepiece>=0.1.99
+
+# Data Processing
+pandas>=2.0.0
+numpy>=1.24.0
+openpyxl>=3.1.0
+
+# Statistical Testing
+scipy>=1.11.0
+statsmodels>=0.14.0
+pingouin>=0.5.3
+
+# Visualization
+matplotlib>=3.7.0
+seaborn>=0.12.0
+plotly>=5.15.0
+
+# Notebooks
+jupyter>=1.0.0
+ipykernel>=6.0.0
+tqdm>=4.65.0
