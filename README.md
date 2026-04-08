@@ -167,14 +167,14 @@ If you use this code or build on this work, please cite:
 - **IndicMT Eval:** Panda et al. (2023) — [Dataset Paper](https://aclanthology.org/)
 - **XLM-RoBERTa:** Conneau et al. (2020)
 - **BLOOM:** BigScience Workshop (2022)
-- **Indic NLP Library:** Kunchukuttan (2020)
+- **Indic NLP Library:** Kunchukuttan (2020) 
 
 ---
 
 ## 📬 Contact
 
 **G L John Salvin**  
-Department of Computer Science and Engineering  
+Department of Data science
 IIT Palakkad, Kerala, India  
 GitHub: [@John-salvin](https://github.com/John-salvin)
 
