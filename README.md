@@ -27,10 +27,12 @@ script-bias-comet-indic-mt/
 ├── README.md                  ← This file
 ├── requirements.txt           ← Python dependencies
 ├── LICENSE                    ← MIT License
+├── CITATION.cff               ← Machine-readable citation
 │
 ├── data/
 │   ├── README.md              ← How to download/access the IndicMT Eval dataset
-│   └── sample/                ← Small sample data for quick testing
+│   ├── raw/                   ← Original dataset files (not committed — see data/README.md)
+│   └── processed/             ← Preprocessed/romanized files
 │
 ├── notebooks/
 │   ├── 01_tokenization_parity.ipynb       ← TP computation
@@ -52,10 +54,11 @@ script-bias-comet-indic-mt/
 │
 ├── results/
 │   ├── figures/                   ← All paper figures (PNG/PDF)
-│   └── tables/                    ← All paper tables (CSV)
+│   ├── tables/                    ← All paper tables (CSV)
+│   └── scores/                    ← Raw metric scores
 │
 └── paper/
-    └── README.md                  ← Link to paper / citation info
+    └── README.md                  ← Citation info
 ```
 
 ---
@@ -90,14 +93,33 @@ See `requirements.txt` for the full list. Key libraries:
 
 ---
 
-## 📊 Dataset
+## 📊 Dataset & Credits
 
-This project uses the **IndicMT Eval** dataset:
-- 5 Indic languages: **Gujarati, Hindi, Malayalam, Marathi, Tamil**
-- 11 MT error types
-- ~5,889 sentences with human quality annotations
+This project uses the **IndicMT Eval** MQM dataset, created by [AI4Bharat](https://github.com/AI4Bharat).
 
-> **Download:** See `data/README.md` for instructions on accessing the IndicMT Eval dataset from its original source.
+| Property | Details |
+|---|---|
+| **Languages** | Gujarati, Hindi, Malayalam, Marathi, Tamil |
+| **Task** | English → Indic MT quality evaluation |
+| **Annotation** | MQM (Multidimensional Quality Metrics) by human experts |
+| **MT Systems** | 7 popular MT systems evaluated |
+| **Error Types** | 11 MQM error categories |
+| **Size** | ~5,889 sentences with human quality annotations |
+| **Source** | [github.com/AI4Bharat/IndicMT-Eval](https://github.com/AI4Bharat/IndicMT-Eval) |
+| **Dataset View** | [Google Sheets](https://docs.google.com/spreadsheets/d/1HEwlBTLvN2NOXLxiBpIt_GVdHkjyvIo8DvQrncgto74/edit?usp=sharing) |
+
+### Indic-COMET Model Checkpoints (from AI4Bharat)
+
+The IndicMT-Eval repository also provides fine-tuned COMET checkpoints for Indic languages:
+
+| Model | Download |
+|---|---|
+| `indic-comet-mqm` | [Download checkpoint](https://objectstore.e2enetworks.net/indic-asr-public/data/anushka/comet_mqm_1.5e-5/comet_mqm_1.5e-5/checkpoints/epoch=2-step=1875-val_kendall=0.455.ckpt) |
+| `indic-comet-da` | [Download checkpoint](https://objectstore.e2enetworks.net/indic-asr-public/data/anushka/comet_da_1.5e-5/comet_da_1.5e-5/checkpoints/epoch=3-step=2500-val_kendall=0.456.ckpt) |
+| `hparams.yaml (DA)` | [Download](https://objectstore.e2enetworks.net/indic-asr-public/data/anushka/comet_da_1.5e-5/comet_da_1.5e-5/hparams.yaml) |
+| `hparams.yaml (MQM)` | [Download](https://objectstore.e2enetworks.net/indic-asr-public/data/anushka/comet_mqm_1.5e-5/comet_mqm_1.5e-5/hparams.yaml) |
+
+> **Please cite the IndicMT-Eval papers below if you use this dataset in your work.**
 
 ---
 
@@ -147,34 +169,75 @@ Quantifies the irrecoverable compute overhead for LLMs processing romanised Indi
 
 ## 📋 Citation
 
+### Cite This Work
+
 If you use this code or build on this work, please cite:
 
 ```bibtex
 @article{johnsalvin2026scriptbias,
-  title   = {Connecting the Dots: Script Bias in Neural MT Metrics},
-  author  = {G L John Salvin},
-  year    = {2026},
+  title       = {Connecting the Dots: Script Bias in Neural MT Metrics},
+  author      = {G L John Salvin},
+  year        = {2026},
   institution = {IIT Palakkad},
-  note    = {Preprint}
+  note        = {Preprint}
+}
+```
+
+### Cite the IndicMT-Eval Dataset
+
+If you use the IndicMT-Eval MQM dataset, **please also cite both of the following papers** from the AI4Bharat team:
+
+```bibtex
+@article{DBLP:journals/corr/abs-2212-10180,
+  author    = {Ananya B. Sai and
+               Tanay Dixit and
+               Vignesh Nagarajan and
+               Anoop Kunchukuttan and
+               Pratyush Kumar and
+               Mitesh M. Khapra and
+               Raj Dabre},
+  title     = {IndicMT Eval: {A} Dataset to Meta-Evaluate Machine Translation metrics
+               for Indian Languages},
+  journal   = {CoRR},
+  volume    = {abs/2212.10180},
+  year      = {2022},
+  url       = {https://arxiv.org/abs/2212.10180}
+}
+```
+
+```bibtex
+@article{singh2024good,
+  title   = {How Good is Zero-Shot MT Evaluation for Low Resource Indian Languages?},
+  author  = {Singh, Anushka and Sai, Ananya B and Dabre, Raj and Puduppully, Ratish
+             and Kunchukuttan, Anoop and Khapra, Mitesh M},
+  journal = {arXiv preprint arXiv:2406.03893},
+  year    = {2024}
 }
 ```
 
 ---
 
-## 🔗 Related Work & References
+## 🔗 References & Related Work
 
-- **COMET:** Rei et al. (2020) — [Unbabel/COMET](https://github.com/Unbabel/COMET)
-- **IndicMT Eval:** Panda et al. (2023) — [Dataset Paper](https://aclanthology.org/)
-- **XLM-RoBERTa:** Conneau et al. (2020)
-- **BLOOM:** BigScience Workshop (2022)
-- **Indic NLP Library:** Kunchukuttan (2020) 
+| Tool / Resource | Reference | Link |
+|---|---|---|
+| **IndicMT-Eval Dataset** | Sai et al. (2022), Singh et al. (2024) | [GitHub](https://github.com/AI4Bharat/IndicMT-Eval) |
+| **COMET** | Rei et al. (2020) | [GitHub](https://github.com/Unbabel/COMET) |
+| **XLM-RoBERTa** | Conneau et al. (2020) | [Paper](https://arxiv.org/abs/1911.02116) |
+| **BLOOM** | BigScience Workshop (2022) | [HuggingFace](https://huggingface.co/bigscience/bloom-560m) |
+| **Indic NLP Library** | Kunchukuttan (2020) | [GitHub](https://github.com/anoopkunchukuttan/indic_nlp_library) |
+| **BERTScore** | Zhang et al. (2020) | [GitHub](https://github.com/Tiiiger/bert_score) |
+| **chrF / chrF++** | Popović (2015, 2017) | [Paper](https://aclanthology.org/W15-3049/) |
+| **NLG-Eval** (BLEU, METEOR, etc.) | Sharma et al. (2017) | [GitHub](https://github.com/Maluuba/nlg-eval) |
+| **GenerationEval** (chrF++, TER, BLEURT) | Castro Ferreira et al. (2020) | [GitHub](https://github.com/WebNLG/GenerationEval) |
+| **SummEval** (SMS, WMDo, MoverScore) | Fabbri et al. (2020) | [GitHub](https://github.com/Yale-LILY/SummEval) |
 
 ---
 
 ## 📬 Contact
 
 **G L John Salvin**  
-Department of Data science
+Department of Data Science  
 IIT Palakkad, Kerala, India  
 GitHub: [@John-salvin](https://github.com/John-salvin)
 
@@ -182,4 +245,5 @@ GitHub: [@John-salvin](https://github.com/John-salvin)
 
 ## 📜 License
 
-This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.  
+Note: The IndicMT-Eval dataset is governed by its own license from [AI4Bharat](https://github.com/AI4Bharat/IndicMT-Eval).
