@@ -1,28 +1,16 @@
 # Paper
 
-## Connecting the Dots: Script Bias in Neural MT Metrics
-
-**Author:** G L John Salvin  
-**Institution:** IIT Palakkad  
-**Year:** 2026  
-**Status:** Under submission
-
-## Abstract
-
-This paper exposes script-conditioned bias in neural MT evaluation metrics (COMET, BLEURT) for Indic languages. Using the IndicMT Eval dataset across 5 languages and 11 error types, we demonstrate that script choice alone explains 22.9% of metric score variance. We introduce the Tokenization–Information Paradox and three novel metrics: TP, IP, and SBI.
+Place the paper PDF here once it is published or submitted.
 
 ## Citation
 
+See `CITATION.cff` in the root of this repository for the machine-readable citation format.
+
 ```bibtex
-@article{johnsalvin2026scriptbias,
-  title   = {Connecting the Dots: Script Bias in Neural MT Metrics},
-  author  = {G L John Salvin},
-  year    = {2026},
-  institution = {IIT Palakkad},
-  note    = {Preprint}
+@article{salvin2026scriptbias,
+  title     = {Connecting the Dots: Script Bias in Neural MT Evaluation Metrics for Indic Languages},
+  author    = {Salvin, John},
+  year      = {2026},
+  note      = {Indian Institute of Technology Palakkad}
 }
 ```
-
-## Preprint / DOI
-
-*Link will be added upon publication.*

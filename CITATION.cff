@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite the following paper."
+authors:
+  - family-names: Salvin
+    given-names: John
+    affiliation: "Indian Institute of Technology Palakkad"
+title: "Connecting the Dots: Script Bias in Neural MT Evaluation Metrics for Indic Languages"
+year: 2026
+type: article
+repository-code: "https://github.com/John-salvin/script-bias-comet-indic-mt"
+abstract: >
+  This paper investigates script bias in neural MT evaluation metrics (COMET, chrF, BERTScore)
+  when applied to Indic languages, using the IndicMT-Eval MQM dataset. We introduce the
+  Script Bias Index (SBI) and demonstrate that script form accounts for ~22.9% of metric
+  score variance across 9 statistical tests.
+keywords:
+  - machine translation evaluation
+  - script bias
+  - Indic languages
+  - COMET
+  - romanization
+  - NLP
+license: MIT

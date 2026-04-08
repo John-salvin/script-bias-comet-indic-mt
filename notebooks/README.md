@@ -1,24 +1,23 @@
 # Notebooks
 
-Run these notebooks **in order** to reproduce all results from the paper.
+This folder contains Jupyter notebooks for reproducing the experiments and results from the paper.
 
-| # | Notebook | Description |
-|---|---|---|
-| 1 | `01_tokenization_parity.ipynb` | Compute TP scores across 5 Indic languages |
-| 2 | `02_information_parity.ipynb` | Compute IP scores using BLOOM-560m |
-| 3 | `03_script_bias_index.ipynb` | Compute SBI and variance explained by script |
-| 4 | `04_computational_tax.ipynb` | Compute Computational Tax per language |
-| 5 | `05_statistical_testing.ipynb` | Run all 9 statistical tests |
-| 6 | `06_reproduce_paper_results.ipynb` | End-to-end reproduction of all paper tables/figures |
+## Notebooks
 
-## Requirements
+| Notebook | Description |
+|---|---|
+| `01_data_exploration.ipynb` | Initial exploration of the IndicMT-Eval MQM dataset |
+| `02_romanization.ipynb` | Romanization pipeline for Indic language scripts |
+| `03_metric_scores.ipynb` | Computing COMET, chrF, and BERTScore on native vs. romanized text |
+| `04_script_bias_index.ipynb` | Computing the Script Bias Index (SBI), TP, and IP metrics |
+| `05_statistical_tests.ipynb` | All 9 statistical tests (Wilcoxon, Friedman, etc.) |
+| `06_figures.ipynb` | Generating all figures and tables from the paper |
 
-Make sure you've installed all dependencies first:
+## How to Run
+
 ```bash
 pip install -r ../requirements.txt
+jupyter notebook
 ```
 
-## Notes
-- Notebooks 1–4 can be run independently.
-- Notebook 6 requires notebooks 1–5 to have been run first (or the processed data to exist in `data/processed/`).
-- Notebook 2 requires a GPU for reasonable speed (or significant patience on CPU).
+Run notebooks in order (01 → 06) for full reproducibility.
