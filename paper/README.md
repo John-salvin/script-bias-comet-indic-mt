@@ -4,7 +4,7 @@
 
 ```bibtex
 @article{johnsalvin2026lostintransliteration,
-  title       = {Lost in Transliteration: Script Bias in Neural MT Evaluation Metrics},
+  title       = {Lost in Transliteration: Orthographic Sensitivity in Neural MT Evaluation},
   author      = {G L John Salvin},
   year        = {2026},
   institution = {IIT Palakkad},
@@ -12,17 +12,13 @@
 }
 ```
 
-## IndicMT-Eval Dataset (please also cite if you use the dataset)
+## IndicMT-Eval Dataset
 
 ```bibtex
 @article{DBLP:journals/corr/abs-2212-10180,
-  author    = {Ananya B. Sai and
-               Tanay Dixit and
-               Vignesh Nagarajan and
-               Anoop Kunchukuttan and
-               Pratyush Kumar and
-               Mitesh M. Khapra and
-               Raj Dabre},
+  author    = {Ananya B. Sai and Tanay Dixit and Vignesh Nagarajan and
+               Anoop Kunchukuttan and Pratyush Kumar and
+               Mitesh M. Khapra and Raj Dabre},
   title     = {IndicMT Eval: {A} Dataset to Meta-Evaluate Machine Translation metrics
                for Indian Languages},
   journal   = {CoRR},
