@@ -4,7 +4,7 @@ authors:
   - family-names: Salvin
     given-names: John
     affiliation: "Indian Institute of Technology Palakkad"
-title: "Connecting the Dots: Script Bias in Neural MT Evaluation Metrics for Indic Languages"
+title: "Lost in Transliteration: Script Bias in Neural MT Evaluation Metrics"
 year: 2026
 type: article
 repository-code: "https://github.com/John-salvin/script-bias-comet-indic-mt"

@@ -1,6 +1,6 @@
 # Script Bias in Neural MT Metrics (COMET & Indic Languages)
 
-> **Paper:** *Connecting the Dots: Script Bias in Neural MT Metrics*  
+> **Paper:** *Lost in Transliteration: Script Bias in Neural MT Evaluation Metrics*  
 > **Author:** G L John Salvin, IIT Palakkad (2026)  
 > **Status:** Under submission
 
@@ -174,8 +174,8 @@ Quantifies the irrecoverable compute overhead for LLMs processing romanised Indi
 If you use this code or build on this work, please cite:
 
 ```bibtex
-@article{johnsalvin2026scriptbias,
-  title       = {Connecting the Dots: Script Bias in Neural MT Metrics},
+@article{johnsalvin2026lostintransliteration,
+  title       = {Lost in Transliteration: Script Bias in Neural MT Evaluation Metrics},
   author      = {G L John Salvin},
   year        = {2026},
   institution = {IIT Palakkad},
