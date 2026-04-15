@@ -1,7 +1,7 @@
 # Script Bias in Neural MT Metrics (COMET & Indic Languages)
 
 > **Paper:** *Lost in Transliteration: Orthographic Sensitivity in Neural MT Evaluation*  
-> **Author:** G L John Salvin, IIT Palakkad (2026)  
+> **Author:** G L John Salvin, Swapnil Hingmire IIT Palakkad (2026)
 > **Status:** Under submission
 
 ---
