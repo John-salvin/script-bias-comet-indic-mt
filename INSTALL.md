@@ -41,7 +41,7 @@ pip install torch==2.5.1+cu118 --index-url https://download.pytorch.org/whl/cu11
 pip install -r requirements.txt
 ```
 
-Not sure which CUDA version you have? Run `nvidia-smi` — the top-right corner shows the driver’s CUDA version.
+Not sure which CUDA version you have? Run `nvidia-smi` — the top-right corner shows the driver's CUDA version.
 
 ## Step 4 — Launch JupyterLab
 

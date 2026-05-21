@@ -1,14 +1,13 @@
-# Paper Citation
+# Citation
 
 ## This Work
 
 ```bibtex
-@article{johnsalvin2026lostintransliteration,
-  title       = {Lost in Transliteration: Orthographic Sensitivity in Neural MT Evaluation},
-  author      = {G L John Salvin},
-  year        = {2026},
-  institution = {IIT Palakkad},
-  note        = {Preprint}
+@article{anonymous2026scriptbias,
+  title   = {Script Bias in Neural MT Evaluation Metrics for Indic Languages},
+  author  = {Anonymous},
+  year    = {2026},
+  note    = {Under review}
 }
 ```
 

@@ -1,12 +1,10 @@
-# Script Bias in Neural MT Metrics (COMET & Indic Languages)
+# Script Bias in Neural MT Evaluation Metrics (COMET & Indic Languages)
 
-> **Paper:** *Lost in Transliteration: Orthographic Sensitivity in Neural MT Evaluation*  
-> **Author:** G L John Salvin, Swapnil Hingmire IIT Palakkad (2026)
-> **Status:** Under submission
+> **Status:** Under review
 
 ---
 
-## 📄 Abstract
+## Abstract
 
 This work exposes a fundamental script-conditioned bias in neural MT evaluation metrics — primarily COMET and BLEURT — when applied to Indic languages. Using the IndicMT Eval dataset (5,889 sentences across 5 languages and 11 error types), we show that script alone explains **22.9% of variance** in COMET scores. We introduce three novel metrics:
 
@@ -19,38 +17,38 @@ Romanization reduces script-driven variance by **93.3%** but degrades human alig
 
 ---
 
-## 🗂️ Repository Structure
+## Repository Structure
 
 ```
 script-bias-comet-indic-mt/
 │
-├── README.md                  ← This file
-├── requirements.txt           ← Python dependencies
-├── LICENSE                    ← MIT License
-├── CITATION.cff               ← Machine-readable citation
+├── README.md                    ← This file
+├── INSTALL.md                   ← Setup instructions
+├── requirements.txt             ← Python dependencies
+├── LICENSE                      ← MIT License
+├── CITATION.cff                 ← Machine-readable citation
 │
 ├── data/
-│   ├── README.md              ← How to download/access the IndicMT Eval dataset
-│   ├── raw/                   ← Original dataset files (not committed — see data/README.md)
-│   └── processed/             ← Preprocessed/romanized files
+│   ├── README.md                ← How to obtain the IndicMT Eval dataset
+│   ├── raw/                     ← Original dataset files (not committed — see data/README.md)
+│   └── processed/               ← Preprocessed / romanised files
 │
 ├── notebooks/
-│   ├── 01_tokenization_parity.ipynb
-├── 02_information_parity.ipynb
-├── 03_script_bias_index.ipynb
-├── 04_computational_tax.ipynb
-├── 05_statistical_testing.ipynb
-│   └── 06_reproduce_paper_results.ipynb
-│
-├── src/
-│   ├── __init__.py
-│   ├── tokenization_parity.py
-├── information_parity.py
-├── script_bias_index.py
-├── computational_tax.py
-├── romanization.py
-├── comet_scoring.py
-│   └── statistical_tests.py
+│   ├── indic/
+│   │   ├── 01_fetch_indicmt_eval.ipynb
+│   │   ├── 02_romanisation_pipeline.ipynb
+│   │   ├── 03_metric_scoring.ipynb
+│   │   ├── 04_tp_ip_sbi_ipi.ipynb
+│   │   ├── 05_statistical_tests.ipynb
+│   │   ├── 06_computational_tax.ipynb
+│   │   ├── 07_extra_metrics.ipynb
+│   │   ├── 08_sentence_length_analysis.ipynb
+│   │   └── 09_metric_human_alignment.ipynb
+│   └── latin/
+│       ├── 01_reproduce_wmt24_core.ipynb
+│       ├── 02_compute_sentence_metrics.ipynb
+│       ├── 03_tp_ip_sbi_ipi_latin.ipynb
+│       └── 04_extra_metrics_latin.ipynb
 │
 ├── results/
 │   ├── figures/
@@ -58,37 +56,44 @@ script-bias-comet-indic-mt/
 │   └── scores/
 │
 └── paper/
-    └── README.md
+    └── README.md                ← Citation information
 ```
 
 ---
 
-## ⚙️ Installation
+## Installation
+
+See [INSTALL.md](INSTALL.md) for full setup instructions (CPU and GPU paths).
 
 ```bash
 git clone https://github.com/John-salvin/script-bias-comet-indic-mt.git
 cd script-bias-comet-indic-mt
-python -m venv venv
-source venv/bin/activate
+python -m venv .venv
+source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
+> **Python 3.10 required.** The AI4Bharat transliteration library does not support 3.11+.
+
 ---
 
-## 📦 Dependencies
+## Dependencies
 
-See `requirements.txt` for the full list. Key libraries:
+See `requirements.txt` for the full pinned list. Key libraries:
 
-- `unbabel-comet` — COMET and COMET-QE scoring
-- `transformers` — XLM-RoBERTa tokenizer (for TP/IP)
-- `indic-nlp-library` — Indic language processing
-- `scipy`, `statsmodels` — Statistical testing
+- `unbabel-comet` — COMET scoring
+- `bert-score` — BERTScore
+- `BLEURT` — BLEURT scoring
+- `transformers` — XLM-RoBERTa tokenizer (TP/IP)
+- `ai4bharat-transliteration`, `indic-transliteration` — Romanisation
+- `sacrebleu` — chrF, BLEU, TER
+- `scipy` — Statistical testing
 - `pandas`, `numpy` — Data processing
-- `matplotlib`, `seaborn` — Visualization
+- `matplotlib`, `seaborn` — Visualisation
 
 ---
 
-## 📊 Dataset & Credits
+## Dataset
 
 This project uses the **IndicMT Eval** MQM dataset, created by [AI4Bharat](https://github.com/AI4Bharat).
 
@@ -96,53 +101,32 @@ This project uses the **IndicMT Eval** MQM dataset, created by [AI4Bharat](https
 |---|---|
 | **Languages** | Gujarati, Hindi, Malayalam, Marathi, Tamil |
 | **Task** | English → Indic MT quality evaluation |
-| **Annotation** | MQM (Multidimensional Quality Metrics) by human experts |
+| **Annotation** | MQM (Multidimensional Quality Metrics) |
 | **Size** | ~5,889 sentences with human quality annotations |
 | **Source** | [github.com/AI4Bharat/IndicMT-Eval](https://github.com/AI4Bharat/IndicMT-Eval) |
 
 ---
 
-## 🔁 Reproducing Paper Results
+## Reproducing Results
 
-```bash
-jupyter notebook notebooks/
-# or
-python src/run_all_experiments.py
-```
+Run the notebooks in order, starting from `notebooks/indic/01_fetch_indicmt_eval.ipynb`.
 
-| Finding | Notebook | Script |
-|---|---|---|
-| Script explains 22.9% of COMET variance | `05_statistical_testing.ipynb` | `statistical_tests.py` |
-| Romanization reduces variance by 93.3% | `03_script_bias_index.ipynb` | `script_bias_index.py` |
-| Computational Tax (1.75×–5.57× overhead) | `04_computational_tax.ipynb` | `computational_tax.py` |
-| TP–IP Paradox across 5 languages | `02_information_parity.ipynb` | `information_parity.py` |
-| COMET-QE DA drops (755% Hindi, 56% Tamil) | `05_statistical_testing.ipynb` | `comet_scoring.py` |
+| Finding | Notebook |
+|---|---|
+| Script explains 22.9% of COMET variance | `05_statistical_tests.ipynb` |
+| Romanization reduces variance by 93.3% | `04_tp_ip_sbi_ipi.ipynb` |
+| Computational Tax (1.75×–5.57× overhead) | `06_computational_tax.ipynb` |
+| TP–IP Paradox across 5 languages | `04_tp_ip_sbi_ipi.ipynb` |
 
 ---
 
-## 📋 Citation
+## Citation
 
-```bibtex
-@article{johnsalvin2026lostintransliteration,
-  title       = {Lost in Transliteration: Orthographic Sensitivity in Neural MT Evaluation},
-  author      = {G L John Salvin},
-  year        = {2026},
-  institution = {IIT Palakkad},
-  note        = {Preprint}
-}
-```
+See [paper/README.md](paper/README.md) for citation details.
 
 ---
 
-## 📬 Contact
-
-**G L John Salvin**  
-Department of Data Science, IIT Palakkad, Kerala, India  
-GitHub: [@John-salvin](https://github.com/John-salvin)
-
----
-
-## 📜 License
+## License
 
 MIT License — see [LICENSE](LICENSE).  
 The IndicMT-Eval dataset is governed by its own license from [AI4Bharat](https://github.com/AI4Bharat/IndicMT-Eval).

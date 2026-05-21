@@ -1,10 +1,8 @@
 cff-version: 1.2.0
-message: "If you use this code, please cite the following paper."
+message: "If you use this code, please cite the associated paper."
 authors:
-  - family-names: Salvin
-    given-names: John
-    affiliation: "Indian Institute of Technology Palakkad"
-title: "Lost in Transliteration: Orthographic Sensitivity in Neural MT Evaluation"
+  - name: "Anonymous"
+title: "Script Bias in Neural MT Evaluation Metrics for Indic Languages"
 year: 2026
 type: article
 repository-code: "https://github.com/John-salvin/script-bias-comet-indic-mt"
