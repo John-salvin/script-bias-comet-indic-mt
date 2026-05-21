@@ -1,7 +1,5 @@
 # Notebooks
 
-Reproducibility notebooks for *Lost in Transliteration: Orthographic Sensitivity in Neural MT Evaluation*.
-
 Notebooks are split into two self-contained folders:
 
 | Folder | Corpus | Purpose |
@@ -11,11 +9,17 @@ Notebooks are split into two self-contained folders:
 
 ## Prerequisites
 
+Install dependencies from `requirements.txt` at the **root of the repository** (`script-bias-comet-indic-mt/requirements.txt`):
+
 ```bash
+# from the repo root
+pip install -r requirements.txt
+
+# or from inside the notebooks/ folder
 pip install -r ../requirements.txt
 ```
 
-Place the five per-language processed CSV files in `../data/processed/` before running any Indic notebook. WMT24 data is fetched automatically in `latin/01`.
+Before running any Indic notebook, place the five per-language processed CSV files in `../data/processed/` (i.e., `script-bias-comet-indic-mt/data/processed/`). WMT24 data is fetched automatically by `latin/01_reproduce_wmt24_core.ipynb`.
 
 ## Execution order
 
