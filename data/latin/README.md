@@ -28,7 +28,7 @@ The dataset is derived from the **WMT24 General MT Shared Task**, accessed via G
 
 | File | Description |
 |---|---|
-| `Wmt24_ende_enes_metrics.xlsx` | Final processed dataset — COMET, COMET-QE, TP, IP, SBI, IPI, and derived metrics for EN-DE and EN-ES (two sheets: German, Spanish) |
+| `wmt24_ende_enes_metrics.xlsx` | Final processed dataset — COMET, COMET-QE, TP, IP, SBI, IPI, and derived metrics for EN-DE and EN-ES (two sheets: German, Spanish) |
 
 ---
 
