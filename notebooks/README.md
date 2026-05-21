@@ -1,24 +1,24 @@
 # Notebooks
 
-This folder contains Jupyter notebooks for reproducing the experiments and results from the paper.
+Reproducibility notebooks for *Lost in Transliteration: Orthographic Sensitivity in Neural MT Evaluation*.
 
-## Notebooks
+Notebooks are split into two self-contained folders:
 
-| Notebook | Description |
-|---|---|
-| `Romanization_Pipeline_v2.ipynb` | Romanization pipeline for all 5 Indic language scripts |
-| `01_tokenization_parity.ipynb` | Computing Tokenization Parity (TP) using the XLM-RoBERTa tokenizer |
-| `02_information_parity.ipynb` | Computing Information Parity (IP) using BLOOM-560M negative log-likelihood |
+| Folder | Corpus | Purpose |
+|---|---|---|
+| [`indic/`](indic/) | IndicMT Eval (5 languages × 1,400 sentences) | All Indic-side experiments, diagnostics, and statistics |
+| [`latin/`](latin/) | WMT24 ENG-DEU / ENG-SPA | Latin-script control experiments |
 
-## How to Run
+## Prerequisites
 
 ```bash
 pip install -r ../requirements.txt
-jupyter notebook
 ```
 
-Run notebooks in the following order for full reproducibility:
+Place the five per-language processed CSV files in `../data/processed/` before running any Indic notebook. WMT24 data is fetched automatically in `latin/01`.
 
-1. `Romanization_Pipeline_v2.ipynb` — generates romanized variants of all language files
-2. `01_tokenization_parity.ipynb` — tokenizes all files and computes TP ratios
-3. `02_information_parity.ipynb` — reads tokenized CSVs from step 2 and computes IP scores
+## Execution order
+
+Run `indic/` notebooks 01 → 12 in sequence, then `latin/` notebooks 01 → 05. Each notebook reads outputs from the previous one — do not skip steps.
+
+See the README inside each subfolder for the full notebook list and descriptions.
