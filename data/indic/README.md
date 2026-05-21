@@ -18,7 +18,7 @@ This project uses the **IndicMT-Eval MQM Dataset** created by the [AI4Bharat](ht
 | **MT systems** | 7 popular MT systems |
 | **Error types** | 11 MQM error categories |
 | **Annotations** | Human MQM annotations by language experts |
-| **Sentences** | ~5,889 |
+| **Sentences** | 7000 |
 
 Please cite both papers when using this dataset:
 
