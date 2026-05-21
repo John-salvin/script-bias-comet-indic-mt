@@ -52,25 +52,17 @@ Please cite both papers when using this dataset:
 |---|---|
 | `Information_parity_outputs_all.xlsx` | Final processed dataset — TP, IP, SBI, IPI, COMET, BLEURT, and all derived metrics for all 5 languages across native and romanised conditions |
 
-Raw MQM annotation files are **not committed** to this repository due to file size. Download them directly from [AI4Bharat/IndicMT-Eval](https://github.com/AI4Bharat/IndicMT-Eval/tree/master/Dataset) and place them in this folder before running the notebooks.
-
 ---
 
 ## Folder Structure
 
 ```
 data/indic/
-├── Information_parity_outputs_all.xlsx   ← Final processed dataset (committed)
-└── raw/                                  ← Place downloaded MQM files here (gitignored)
+└── Information_parity_outputs_all.xlsx   ← Final processed dataset
 ```
 
 ---
 
-## How to Prepare Data
+## How to Get the Raw Data
 
-1. Download the MQM dataset from [AI4Bharat/IndicMT-Eval](https://github.com/AI4Bharat/IndicMT-Eval/tree/master/Dataset)  
-   or view it directly via the [Google Sheets link](https://docs.google.com/spreadsheets/d/1HEwlBTLvN2NOXLxiBpIt_GVdHkjyvIo8DvQrncgto74/edit?usp=sharing)
-2. Place the raw files inside `data/indic/raw/`
-3. Run the preprocessing notebooks in order from `notebooks/indic/01_fetch_indicmt_eval.ipynb`
-
-> Raw data files are excluded from this repo via `.gitignore` due to file size.
+The raw MQM annotation files are not included in this repository. Download them directly from [AI4Bharat/IndicMT-Eval](https://github.com/AI4Bharat/IndicMT-Eval/tree/master/Dataset) or view the dataset via the [Google Sheets link](https://docs.google.com/spreadsheets/d/1HEwlBTLvN2NOXLxiBpIt_GVdHkjyvIo8DvQrncgto74/edit?usp=sharing), then run the notebooks in order starting from `notebooks/indic/01_fetch_indicmt_eval.ipynb`.
