@@ -50,7 +50,7 @@ Please cite both papers when using this dataset:
 
 | File | Description |
 |---|---|
-| `Information_parity_outputs_all.xlsx` | Final processed dataset — TP, IP, SBI, IPI, COMET, BLEURT, and all derived metrics for all 5 languages across native and romanised conditions |
+| `indic_mt_eval_metrics.xlsx` | Final processed dataset — TP, IP, SBI, IPI, COMET, BLEURT, and all derived metrics for all 5 languages across native and romanised conditions |
 
 ---
 
@@ -58,7 +58,7 @@ Please cite both papers when using this dataset:
 
 ```
 data/indic/
-└── Information_parity_outputs_all.xlsx   ← Final processed dataset
+└── indic_mt_eval_metrics.xlsx   ← Final processed dataset
 ```
 
 ---
