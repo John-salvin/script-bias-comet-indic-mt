@@ -23,10 +23,8 @@ Romanization reduces script-driven variance by **93.3%** but degrades human alig
 script-bias-comet-indic-mt/
 │
 ├── README.md                    ← This file
-├── INSTALL.md                   ← Setup instructions
 ├── requirements.txt             ← Python dependencies
 ├── LICENSE                      ← MIT License
-├── CITATION.cff                 ← Machine-readable citation
 │
 ├── data/
 │   ├── README.md                ← How to obtain the IndicMT Eval dataset
@@ -63,17 +61,57 @@ script-bias-comet-indic-mt/
 
 ## Installation
 
-See [INSTALL.md](INSTALL.md) for full setup instructions (CPU and GPU paths).
+> **Python 3.10 required.** The AI4Bharat transliteration library does not support 3.11+.
+
+### Step 1 — Clone the repository
 
 ```bash
 git clone https://github.com/John-salvin/script-bias-comet-indic-mt.git
 cd script-bias-comet-indic-mt
+```
+
+### Step 2 — Create a virtual environment
+
+```bash
 python -m venv .venv
-source .venv/bin/activate
+source .venv/bin/activate        # macOS / Linux
+.venv\Scripts\activate           # Windows
+```
+
+### Step 3 — Install dependencies
+
+**CPU (any machine, no GPU required)**
+
+```bash
 pip install -r requirements.txt
 ```
 
-> **Python 3.10 required.** The AI4Bharat transliteration library does not support 3.11+.
+All notebooks run correctly on CPU; scoring ~7,000 sentences will be slower (plan for 30–60 min per metric).
+
+**GPU (NVIDIA, recommended for `indic/03_metric_scoring`)**
+
+Install the CUDA build of PyTorch matching your driver **before** running `pip install -r requirements.txt`:
+
+```bash
+# CUDA 12.1
+pip install torch==2.5.1+cu121 --index-url https://download.pytorch.org/whl/cu121
+
+# CUDA 11.8
+pip install torch==2.5.1+cu118 --index-url https://download.pytorch.org/whl/cu118
+
+# Then install the rest
+pip install -r requirements.txt
+```
+
+Not sure which CUDA version you have? Run `nvidia-smi` — the top-right corner shows the driver's CUDA version.
+
+### Step 4 — Launch JupyterLab
+
+```bash
+jupyterlab
+```
+
+Open the notebooks in order starting from `notebooks/indic/01_fetch_indicmt_eval.ipynb`.
 
 ---
 
@@ -109,7 +147,7 @@ This project uses the **IndicMT Eval** MQM dataset, created by [AI4Bharat](https
 
 ## Reproducing Results
 
-Run the notebooks in order, starting from `notebooks/indic/01_fetch_indicmt_eval.ipynb`.
+Run the notebooks in order starting from `notebooks/indic/01_fetch_indicmt_eval.ipynb`.
 
 | Finding | Notebook |
 |---|---|
@@ -117,12 +155,6 @@ Run the notebooks in order, starting from `notebooks/indic/01_fetch_indicmt_eval
 | Romanization reduces variance by 93.3% | `04_tp_ip_sbi_ipi.ipynb` |
 | Computational Tax (1.75×–5.57× overhead) | `06_computational_tax.ipynb` |
 | TP–IP Paradox across 5 languages | `04_tp_ip_sbi_ipi.ipynb` |
-
----
-
-## Citation
-
-See [paper/README.md](paper/README.md) for citation details.
 
 ---
 
