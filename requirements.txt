@@ -14,8 +14,10 @@ regex==2026.1.15
 protobuf==4.25.3
 
 # ── Deep learning ────────────────────────────────────────────────────────────
-# Install the CUDA build that matches your driver; CPU-only: pip install torch==2.5.1
-torch==2.5.1+cu121
+# torch is NOT listed here intentionally.
+# pip install -r requirements.txt will install the CPU build by default.
+# GPU users: see INSTALL.md for the one-line CUDA-specific install command.
+torch>=2.5.1
 pytorch-lightning==2.6.0
 lightning-utilities==0.15.2
 
