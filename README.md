@@ -68,34 +68,38 @@ Latin-script controls are drawn from the **WMT24 General MT Shared Task**, acces
 ```
 script-bias-comet-indic-mt/
 │
-├── README.md                         ← This file
-├── requirements.txt                  ← Python dependencies
-├── LICENSE                           ← MIT License
+├── README.md                              ← This file
+├── requirements.txt                       ← Python dependencies
+├── LICENSE                                ← MIT License
 │
 ├── data/
 │   ├── indic/
-│   │   ├── README.md                 ← Dataset credit & reproduction instructions
-│   │   └── indic_mt_eval_metrics.xlsx← Processed Indic dataset with all metrics
+│   │   ├── README.md                      ← Dataset credit & reproduction instructions
+│   │   └── indic_mt_eval_metrics.xlsx     ← Processed Indic dataset with all metrics
 │   └── latin/
-│       ├── README.md                 ← Dataset credit & reproduction instructions
-│       └── wmt24_ende_enes_metrics.xlsx ← Processed WMT24 dataset with all metrics
+│       ├── README.md                      ← Dataset credit & reproduction instructions
+│       └── wmt24_ende_enes_metrics.xlsx   ← Processed WMT24 dataset with all metrics
 │
 ├── notebooks/
 │   ├── indic/
 │   │   ├── 01_fetch_indicmt_eval.ipynb
 │   │   ├── 02_romanisation_pipeline.ipynb
 │   │   ├── 03_metric_scoring.ipynb
-│   │   ├── 04_tp_ip_sbi_ipi.ipynb
-│   │   ├── 05_statistical_tests.ipynb
-│   │   ├── 06_computational_tax.ipynb
+│   │   ├── 04_tokenization_parity.ipynb
+│   │   ├── 05_information_parity.ipynb
+│   │   ├── 06_sbi_ipi_diagnostics.ipynb
 │   │   ├── 07_extra_metrics.ipynb
-│   │   ├── 08_sentence_length_analysis.ipynb
-│   │   └── 09_metric_human_alignment.ipynb
+│   │   ├── 08_statistical_analysis.ipynb
+│   │   ├── 09_metric_human_alignment.ipynb
+│   │   ├── 10_sbi_zone_analysis.ipynb
+│   │   ├── 11_severity_analysis.ipynb
+│   │   └── 12_computational_tax.ipynb
 │   └── latin/
 │       ├── 01_reproduce_wmt24_core.ipynb
 │       ├── 02_compute_sentence_metrics.ipynb
 │       ├── 03_tp_ip_sbi_ipi_latin.ipynb
-│       └── 04_extra_metrics_latin.ipynb
+│       ├── 04_extra_metrics_latin.ipynb
+│       └── 05_deu_sbi_severity.ipynb
 │
 └── results/
     ├── figures/
@@ -183,12 +187,15 @@ Run the Indic notebooks in order from `notebooks/indic/01_fetch_indicmt_eval.ipy
 
 | Finding | Notebook |
 |---|---|
-| Script explains 22.9% of COMET variance (ANOVA η²) | `indic/05_statistical_tests.ipynb` |
-| Romanisation reduces variance by 93.3% | `indic/04_tp_ip_sbi_ipi.ipynb` |
-| TP–IP Inversion across 5 languages | `indic/04_tp_ip_sbi_ipi.ipynb` |
-| Computational Tax (1.75×–5.57× overhead) | `indic/06_computational_tax.ipynb` |
+| Script explains 22.9% of COMET variance (ANOVA η²) | `indic/08_statistical_analysis.ipynb` |
+| Romanisation reduces variance by 93.3% | `indic/06_sbi_ipi_diagnostics.ipynb` |
+| TP–IP Inversion across 5 languages | `indic/04_tokenization_parity.ipynb` + `indic/05_information_parity.ipynb` |
+| SBI zone classification | `indic/10_sbi_zone_analysis.ipynb` |
+| Severity analysis across error types | `indic/11_severity_analysis.ipynb` |
+| Computational Tax (1.75×–5.57× overhead) | `indic/12_computational_tax.ipynb` |
 | COMET–human alignment collapse (29–62%) | `indic/09_metric_human_alignment.ipynb` |
 | Latin-script controls (DEU Burden / SPA Parity) | `latin/03_tp_ip_sbi_ipi_latin.ipynb` |
+| DEU SBI & severity analysis | `latin/05_deu_sbi_severity.ipynb` |
 
 ---
 
