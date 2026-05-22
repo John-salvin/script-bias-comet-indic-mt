@@ -103,8 +103,7 @@ script-bias-comet-indic-mt/
 │
 └── results/
     ├── figures/
-    ├── tables/
-    └── scores/
+    └── tables/
 ```
 
 ---
@@ -116,7 +115,7 @@ script-bias-comet-indic-mt/
 ### Step 1 — Clone the repository
 
 ```bash
-git clone https://github.com/John-salvin/script-bias-comet-indic-mt.git
+git clone <repository URL withheld for anonymous review>
 cd script-bias-comet-indic-mt
 ```
 
