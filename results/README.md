@@ -27,14 +27,14 @@ Every CSV here corresponds directly to a table in the paper or appendix. They ar
 
 | File | Contents |
 |---|---|
-| `comet_tp_ip_summary.csv` | Mean COMET (native + romanised), Δ points, Spearman ρ (native → romanised), TP and IP values with % change — one row per language. Main paper Table 2. |
-| `sample_sizes_mqm_buckets.csv` | N = 1,400 per language with MQM severity bucket counts (Default, Very Low, Low, Medium, High, Very High). Appendix A. |
-| `anova_sbi_threshold.csv` | One-way ANOVA results (F, p, η²) for native and romanised conditions; sentence-level SBI ≥ 3.0 proportions per language; HIN–GUJ natural experiment (gap in native vs. romanised COMET, Welch's t). Appendix A. |
-| `metric_correlations_full.csv` | Spearman ρ between MQM and each metric (COMET, BLEURT, BERTScore, BLEU, chrF, TER) for all five languages × two conditions (native + romanised). Appendix B. |
-| `master_language_profile.csv` | Per-language IP, TP, SBI, IPI (native + romanised), MATTR, dependent-vowel rate (DV/1k), and IP–COMET Pearson r. Covers all seven settings (five Indic + DEU + SPA). Appendix B. |
-| `word_length_tp_correlation.csv` | Sentence-level Spearman ρ between word count and XLM-R token count, native and romanised, per language. Appendix D. |
-| `marathi_severity_inversion.csv` | Mean ΔCOMET (romanised − native) stratified by MQM severity bucket for Marathi, plus group Spearman ρ. Appendix E. |
-| `latin_script_controls.csv` | IP, SBI, MATTR, Byte Premium, single-token % and IP–COMET r for ENG-SPA and ENG-DEU (WMT24), alongside the Indic native range. Appendix F. |
-| `corpus_corroboration.csv` | MATTR (native + romanised) and Byte Premium for all seven settings. Appendix G. |
-| `computational_tax_decomposition.csv` | Length Penalty (LP), Entropy Penalty (EP), Total Tax, and EP% of ln(Tax) per language. Appendix C. |
+| `comet_tp_ip_summary.csv` | Mean COMET (native + romanised), Δ points, Spearman ρ (native → romanised), TP and IP values with % change — one row per language. |
+| `sample_sizes_mqm_buckets.csv` | N = 1,400 per language with MQM severity bucket counts (Default, Very Low, Low, Medium, High, Very High). |
+| `anova_sbi_threshold.csv` | One-way ANOVA results (F, p, η²) for native and romanised conditions; sentence-level SBI ≥ 3.0 proportions per language; HIN–GUJ natural experiment (gap in native vs. romanised COMET, Welch's t). |
+| `metric_correlations_full.csv` | Spearman ρ between MQM and each metric (COMET, BLEURT, BERTScore, BLEU, chrF, TER) for all five languages × two conditions (native + romanised). |
+| `master_language_profile.csv` | Per-language IP, TP, SBI, IPI (native + romanised), MATTR, dependent-vowel rate (DV/1k), and IP–COMET Pearson r. Covers all seven settings (five Indic + DEU + SPA). |
+| `word_length_tp_correlation.csv` | Sentence-level Spearman ρ between word count and XLM-R token count, native and romanised, per language. |
+| `marathi_severity_inversion.csv` | Mean ΔCOMET (romanised − native) stratified by MQM severity bucket for Marathi, plus group Spearman ρ. |
+| `latin_script_controls.csv` | IP, SBI, MATTR, Byte Premium, single-token % and IP–COMET r for ENG-SPA and ENG-DEU (WMT24), alongside the Indic native range. |
+| `corpus_corroboration.csv` | MATTR (native + romanised) and Byte Premium for all seven settings. |
+| `computational_tax_decomposition.csv` | Length Penalty (LP), Entropy Penalty (EP), Total Tax, and EP% of ln(Tax) per language. |
 | `appendix_full_stats.csv` | Full per-language Welch's t-test results: mean, SD, N, t-statistic, p-value, Cohen's d for COMET native vs. romanised. |
