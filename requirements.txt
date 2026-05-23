@@ -9,15 +9,14 @@ transformers==4.40.2
 tokenizers==0.19.1
 sentencepiece==0.2.1
 safetensors==0.7.0
-huggingface-hub==0.36.0
-regex==2026.1.15
+huggingface-hub>=0.36.0
+regex>=2024.11.6
 protobuf==4.25.3
 
 # ── Deep learning ────────────────────────────────────────────────────────────
 # torch is NOT listed here intentionally.
 # pip install -r requirements.txt will install the CPU build by default.
 # GPU users: see INSTALL.md for the one-line CUDA-specific install command.
-torch>=2.5.1
 pytorch-lightning==2.6.0
 lightning-utilities==0.15.2
 
