@@ -1,4 +1,4 @@
-# Lost in Tokenization: Script Invariance Failures in COMET-based Neural MT Evaluation
+# Lost in Tokenization: Rethinking Script Invariance in COMET-based Neural Machine Translation Evaluation
 
 > **Status:** Under review
 
