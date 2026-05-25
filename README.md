@@ -75,10 +75,16 @@ script-bias-comet-indic-mt/
 ├── data/
 │   ├── indic/
 │   │   ├── README.md                      ← Dataset credit & reproduction instructions
-│   │   └── indic_mt_eval_metrics.xlsx     ← Processed Indic dataset with all metrics
-│   └── latin/
-│       ├── README.md                      ← Dataset credit & reproduction instructions
-│       └── wmt24_ende_enes_metrics.xlsx   ← Processed WMT24 dataset with all metrics
+│   │   └── indic_mt_eval_metrics.xlsx     ← Source workbook with all metrics (committed)
+│   ├── latin/
+│   │   ├── README.md                      ← Dataset credit & reproduction instructions
+│   │   └── wmt24_ende_enes_metrics.xlsx   ← Source workbook with all metrics (committed)
+│   └── processed/                         ← GENERATED at runtime by indic/01 (not committed)
+│       ├── gujarati_indicmt.csv           ←  1,400 rows · written by nb01, read by nb02–12
+│       ├── hindi_indicmt.csv
+│       ├── malayalam_indicmt.csv
+│       ├── marathi_indicmt.csv
+│       └── tamil_indicmt.csv
 │
 ├── notebooks/
 │   ├── indic/
